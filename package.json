@@ -19,7 +19,11 @@
     "lint": "eslint --ext .js,.jsx .",
     "test": "jest",
     "test:coverage": "jest --coverage",
-    "test:watch": "jest --noStackTrace --watchAll"
+    "test:watch": "jest --noStackTrace --watchAll",
+    "postinstall": "npm run build",
+    "migrate": "npm run knex migrate:latest",
+    "seed": "npm run knex seed:run",
+    "deploy:setup": "npm run migrate && npm run seed"
   },
   "babel": {
     "presets": [
