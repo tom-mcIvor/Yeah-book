@@ -262,12 +262,59 @@ eb terminate
 eb list
 ```
 
-## Cost Optimization
+## AWS Deployment Costs
 
-1. **Use t3.micro instances** for development
-2. **Set up auto-scaling** to scale down during low usage
-3. **Use RDS with appropriate instance size**
-4. **Monitor costs** in AWS Cost Explorer
+### Free Tier Eligible (First 12 months)
+If you're within your first 12 months of AWS, you can deploy for **FREE** using:
+
+- **EC2 t3.micro**: 750 hours/month (enough for 1 instance running 24/7)
+- **RDS db.t3.micro**: 750 hours/month + 20GB storage
+- **Application Load Balancer**: 750 hours/month
+- **S3**: 5GB storage + 20,000 GET requests + 2,000 PUT requests
+
+### Estimated Monthly Costs (After Free Tier)
+
+**Minimal Setup (Recommended for testing):**
+- **Elastic Beanstalk**: Free (you only pay for underlying resources)
+- **EC2 t3.micro**: ~$8.50/month
+- **Application Load Balancer**: ~$16/month
+- **RDS db.t3.micro**: ~$12/month
+- **S3 storage**: ~$1/month (for 10GB)
+- **Data transfer**: ~$1-5/month
+- **Total**: ~$38-42/month
+
+**Production Setup:**
+- **EC2 t3.small** (2 instances): ~$34/month
+- **Application Load Balancer**: ~$16/month
+- **RDS db.t3.small**: ~$25/month
+- **S3 storage**: ~$2-5/month
+- **CloudFront CDN**: ~$1-10/month
+- **Total**: ~$78-90/month
+
+### Cost Optimization Tips
+
+1. **Start with t3.micro** instances (free tier eligible)
+2. **Use SQLite instead of RDS** for development (saves ~$12/month)
+3. **Set up auto-scaling** to scale down during low usage
+4. **Use spot instances** for non-critical workloads (up to 90% savings)
+5. **Monitor costs** in AWS Cost Explorer
+6. **Set up billing alerts** to avoid surprises
+7. **Use S3 Intelligent Tiering** for file storage
+8. **Enable CloudWatch detailed monitoring** only when needed
+
+### Alternative: Cheaper Options
+
+**AWS Lightsail** (Simpler, fixed pricing):
+- **$3.50/month**: 512MB RAM, 1 vCPU, 20GB SSD
+- **$5/month**: 1GB RAM, 1 vCPU, 40GB SSD
+- **$10/month**: 2GB RAM, 1 vCPU, 60GB SSD
+
+**Other Platforms** (Consider these alternatives):
+- **Heroku**: $7/month (Hobby tier)
+- **Railway**: $5/month
+- **Render**: $7/month
+- **DigitalOcean App Platform**: $5/month
+- **Vercel + PlanetScale**: $0-20/month
 
 ## Security Best Practices
 

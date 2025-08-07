@@ -1,0 +1,25 @@
+{
+  "name": "yeahbook",
+  "version": "1.0.0",
+  "main": "server/index.js",
+  "license": "MIT",
+  "engines": {
+    "node": "18.x",
+    "npm": "9.x"
+  },
+  "scripts": {
+    "start": "node server"
+  },
+  "dependencies": {
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-jwt": "^7.7.5",
+    "express-jwt-authz": "^2.4.1",
+    "jsonwebtoken": "^8.5.1",
+    "jwks-rsa": "^2.0.4",
+    "knex": "^1.0.7",
+    "multer": "^1.4.5-lts.1",
+    "sqlite3": "^5.1.2",
+    "superagent": "^6.1.0"
+  }
+}

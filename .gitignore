@@ -9,3 +9,7 @@ server/public/styles.css.map
 tags
 coverage
 .DS_Store
+# Elastic Beanstalk Files
+.elasticbeanstalk/*
+!.elasticbeanstalk/*.cfg.yml
+!.elasticbeanstalk/*.global.yml
