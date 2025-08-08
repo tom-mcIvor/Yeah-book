@@ -1,18 +1,11 @@
 version: 1.0
-runtime: nodejs14
+runtime: nodejs16
 build:
   commands:
     build:
       - npm ci
       - npm run build:client
 run:
-  runtime-version: 14
   command: npm start
   network:
     port: 3000
-    env: PORT
-  env:
-    - name: NODE_ENV
-      value: "production"
-    - name: PORT
-      value: "3000"
