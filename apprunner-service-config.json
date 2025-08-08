@@ -1,0 +1,39 @@
+{
+  "ServiceName": "yeah-book-app",
+  "SourceConfiguration": {
+    "CodeRepository": {
+      "RepositoryUrl": "https://github.com/tom-mcIvor/Yeah-book",
+      "SourceCodeVersion": {
+        "Type": "BRANCH",
+        "Value": "aws-app-runner"
+      },
+      "CodeConfiguration": {
+        "ConfigurationSource": "REPOSITORY",
+        "CodeConfigurationValues": {
+          "Runtime": "NODEJS_18",
+          "BuildCommand": "npm ci && npm run build:client",
+          "StartCommand": "npm start",
+          "RuntimeEnvironmentVariables": {
+            "NODE_ENV": "production",
+            "PORT": "3000"
+          }
+        }
+      }
+    },
+    "AutoDeploymentsEnabled": true
+  },
+  "InstanceConfiguration": {
+    "Cpu": "1 vCPU",
+    "Memory": "2 GB"
+  },
+  "Tags": [
+    {
+      "Key": "Project",
+      "Value": "Yeah-book"
+    },
+    {
+      "Key": "Environment",
+      "Value": "Production"
+    }
+  ]
+}
