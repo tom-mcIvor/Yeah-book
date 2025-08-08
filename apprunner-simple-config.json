@@ -1,0 +1,20 @@
+{
+  "ServiceName": "yeah-book-app",
+  "SourceConfiguration": {
+    "CodeRepository": {
+      "RepositoryUrl": "https://github.com/tom-mcIvor/Yeah-book",
+      "SourceCodeVersion": {
+        "Type": "BRANCH",
+        "Value": "aws-app-runner"
+      },
+      "CodeConfiguration": {
+        "ConfigurationSource": "REPOSITORY"
+      }
+    },
+    "AutoDeploymentsEnabled": true
+  },
+  "InstanceConfiguration": {
+    "Cpu": "1 vCPU",
+    "Memory": "2 GB"
+  }
+}
