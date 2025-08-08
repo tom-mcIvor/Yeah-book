@@ -9,6 +9,8 @@ server/public/styles.css.map
 tags
 coverage
 .DS_Store
+# AWS CLI installation
+aws/
 # Elastic Beanstalk Files
 .elasticbeanstalk/*
 !.elasticbeanstalk/*.cfg.yml
