@@ -1,11 +1,12 @@
 version: 1.0
-# Let App Runner auto-detect Node.js version
+runtime: nodejs14
 build:
   commands:
     build:
       - npm ci
       - npm run build:client
 run:
+  runtime-version: 14
   command: npm start
   network:
     port: 3000
