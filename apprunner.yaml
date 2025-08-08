@@ -3,8 +3,8 @@ runtime: nodejs18
 build:
   commands:
     build:
-      - npm install
-      - npm run build:client
+      - npm ci
+      - npm run build
 run:
   runtime-version: nodejs18
   command: npm start
