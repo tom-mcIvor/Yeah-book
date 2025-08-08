@@ -1,0 +1,46 @@
+# Dependencies
+node_modules
+npm-debug.log*
+
+# Development files
+.git
+.gitignore
+README.md
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# Build outputs
+client/dist
+server/public/bundle.js
+
+# Test files
+**/*.test.js
+**/*.test.jsx
+**/__tests__/
+
+# IDE files
+.vscode
+.idea
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs
+logs
+*.log
+
+# Coverage directory used by tools like istanbul
+coverage
+
+# Temporary folders
+tmp
+temp
+
+# AWS deployment files (not needed in container)
+.ebextensions
+deploy*.sh
+package-simple.json

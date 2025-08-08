@@ -1,0 +1,21 @@
+version: 1.0
+runtime: nodejs18
+build:
+  commands:
+    build:
+      - echo "Installing dependencies"
+      - npm ci
+      - echo "Building client application"
+      - npm run build:client
+      - echo "Build completed"
+run:
+  runtime-version: 18
+  command: npm start
+  network:
+    port: 3000
+    env: PORT
+  env:
+    - name: NODE_ENV
+      value: "production"
+    - name: PORT
+      value: "3000"
