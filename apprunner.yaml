@@ -1,12 +1,12 @@
 version: 1.0
-runtime: nodejs18
+runtime: nodejs16
 build:
   commands:
     build:
-      - npm ci
-      - npm run build
+      - npm install
+      - npm run webpack -- --mode production
 run:
-  runtime-version: nodejs18
+  runtime-version: nodejs16
   command: npm start
   network:
     port: 3000
