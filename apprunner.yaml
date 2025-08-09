@@ -4,7 +4,7 @@ build:
   commands:
     build:
       - npm install
-      - npm run webpack -- --mode production
+      - npm run build
 run:
   runtime-version: nodejs16
   command: npm start
