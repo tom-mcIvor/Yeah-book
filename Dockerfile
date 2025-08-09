@@ -10,14 +10,17 @@ WORKDIR /app
 # Copy package.json and package-lock.json
 COPY package*.json ./
 
-# Install dependencies
-RUN npm ci --only=production
+# Install all dependencies (including dev dependencies for build)
+RUN npm ci
 
 # Copy the rest of the application code
 COPY . .
 
 # Build the client application
 RUN npm run build:client
+
+# Remove dev dependencies to reduce image size
+RUN npm prune --production
 
 # Create storage directory for file uploads
 RUN mkdir -p /app/storage/images
